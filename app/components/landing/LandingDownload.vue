@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const { storesEnabled } = useStoresEnabled()
 </script>
 
 <template>
@@ -11,10 +12,13 @@ const { t } = useI18n()
           <h2 class="font-display m-0 text-[34px] leading-[1.1] font-medium tracking-[-0.5px] text-white lg:text-5xl">
             {{ t('download.title') }}
           </h2>
-          <p class="text-navy-soft m-0 text-base leading-normal lg:text-lg">{{ t('download.text') }}</p>
+          <p class="text-navy-soft m-0 text-base leading-normal lg:text-lg">
+            {{ storesEnabled ? t('download.text') : t('download.soonText') }}
+          </p>
         </div>
       </div>
-      <LandingStoreButtons tone="dark" />
+      <LandingStoreButtons v-if="storesEnabled" tone="dark" />
+      <LandingNotifyForm v-else tone="dark" />
     </div>
   </section>
 </template>

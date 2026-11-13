@@ -17,6 +17,7 @@ export default {
     pricing: 'Tarifs',
     faq: 'Questions',
     download: 'Télécharger l’appli',
+    notify: 'Être prévenu',
     openMenu: 'Ouvrir le menu',
     closeMenu: 'Fermer le menu',
   },
@@ -24,12 +25,22 @@ export default {
     ios: 'Télécharger sur iPhone',
     android: 'Télécharger sur Android',
   },
+  notify: {
+    formLabel: 'Être prévenu de la sortie',
+    label: 'Sois prévenu dès la sortie de l’appli',
+    placeholder: "ton{'@'}email.fr",
+    submit: 'Me prévenir',
+    help: 'Un seul e-mail, le jour de la sortie. Désinscription en un clic.',
+    thanksTitle: 'C’est noté !',
+    thanksText: 'On t’écrit dès que Meepleo est disponible.',
+  },
   hero: {
     badge: 'L’appli des soirées jeux de société',
     titleLine1: 'Moins de livret,',
     titleLine2: 'plus de jeu.',
     lead: 'Meepleo t’explique la mise en place, répond à tes questions de règles avec Meepy et tient la feuille de score. Tout le monde reste autour de la table.',
     note: 'Gratuit · iPhone et Android · Premium en option',
+    soon: 'Bientôt sur iPhone et Android · gratuit',
     question: 'On compte les cartes recouvertes ?',
     answer: 'Non, seules les cartes visibles comptent.',
     scoreAlt: 'Feuille de score de Meepleo : le classement après 4 manches',
@@ -138,6 +149,7 @@ export default {
   pricing: {
     eyebrow: 'Tarifs',
     title: 'Gratuit pour jouer, Premium pour aller plus loin',
+    notifyCta: 'Être prévenu de la sortie',
     free: {
       name: 'Gratuit',
       price: '0 €',
@@ -166,6 +178,10 @@ export default {
   faq: {
     eyebrow: 'Questions',
     title: 'Les questions qu’on nous pose',
+    release: {
+      question: 'Quand l’appli sera-t-elle disponible ?',
+      answer: 'Bientôt, sur iPhone et Android. Laisse ton e-mail plus haut : on te prévient le jour de la sortie.',
+    },
     friends: {
       question: 'Mes amis doivent-ils avoir l’appli ?',
       answer:
@@ -190,6 +206,7 @@ export default {
   download: {
     title: 'Prêt pour la prochaine partie ?',
     text: 'Télécharge Meepleo, ajoute tes jeux, et laisse Meepy arbitrer.',
+    soonText: 'Meepleo arrive bientôt sur iPhone et Android. Laisse ton e-mail : on te prévient le jour de la sortie.',
   },
   footer: {
     label: 'Liens légaux',

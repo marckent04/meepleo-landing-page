@@ -10,6 +10,13 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   typescript: { strict: true },
+  runtimeConfig: {
+    public: {
+      // NUXT_PUBLIC_STORES_ENABLED=true shows the store buttons; otherwise the "get notified" form is shown.
+      // Read at `pnpm generate` time for the static build.
+      storesEnabled: false,
+    },
+  },
   // Static site generation (landing page)
   ssr: true,
   nitro: {

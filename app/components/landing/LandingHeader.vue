@@ -5,9 +5,11 @@ import { useMenuStore } from '~/stores/menu'
 const { t } = useI18n()
 const menu = useMenuStore()
 const { isOpen } = storeToRefs(menu)
+const { storesEnabled } = useStoresEnabled()
 
 const links = computed(() => LANDING_NAV.map((id) => ({ id, label: t(`nav.${id}`) })))
 const menuLabel = computed(() => (isOpen.value ? t('nav.closeMenu') : t('nav.openMenu')))
+const ctaLabel = computed(() => (storesEnabled.value ? t('nav.download') : t('nav.notify')))
 </script>
 
 <template>
@@ -22,7 +24,7 @@ const menuLabel = computed(() => (isOpen.value ? t('nav.closeMenu') : t('nav.ope
       </nav>
 
       <UiBaseButtonLink href="#download" class="hidden h-12 text-[15px] lg:inline-flex">
-        {{ t('nav.download') }}
+        {{ ctaLabel }}
       </UiBaseButtonLink>
 
       <button
@@ -53,7 +55,7 @@ const menuLabel = computed(() => (isOpen.value ? t('nav.closeMenu') : t('nav.ope
         {{ link.label }}
       </a>
       <UiBaseButtonLink href="#download" class="mt-2 h-12 text-[15px]" @click="menu.close">
-        {{ t('nav.download') }}
+        {{ ctaLabel }}
       </UiBaseButtonLink>
     </nav>
   </header>

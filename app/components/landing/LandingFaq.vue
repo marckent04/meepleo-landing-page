@@ -1,10 +1,11 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const { storesEnabled } = useStoresEnabled()
 
 const QUESTIONS = ['friends', 'missing', 'mistakes', 'scoring'] as const
 
 const questions = computed(() =>
-  QUESTIONS.map((key) => ({
+  (storesEnabled.value ? QUESTIONS : (['release', ...QUESTIONS] as const)).map((key) => ({
     key,
     question: t(`faq.${key}.question`),
     answer: t(`faq.${key}.answer`),

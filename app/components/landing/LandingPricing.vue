@@ -1,8 +1,11 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const { storesEnabled } = useStoresEnabled()
 
 const freeFeatures = computed(() => [1, 2, 3, 4, 5].map((n) => t(`pricing.free.feature${n}`)))
 const premiumFeatures = computed(() => [1, 2, 3, 4].map((n) => t(`pricing.premium.feature${n}`)))
+const freeCta = computed(() => (storesEnabled.value ? t('pricing.free.cta') : t('pricing.notifyCta')))
+const premiumCta = computed(() => (storesEnabled.value ? t('pricing.premium.cta') : t('pricing.notifyCta')))
 </script>
 
 <template>
@@ -15,7 +18,7 @@ const premiumFeatures = computed(() => [1, 2, 3, 4].map((n) => t(`pricing.premiu
         :period="t('pricing.free.period')"
         :text="t('pricing.free.text')"
         :features="freeFeatures"
-        :cta-label="t('pricing.free.cta')"
+        :cta-label="freeCta"
         cta-href="#download"
       />
       <LandingPricingCard
@@ -25,7 +28,7 @@ const premiumFeatures = computed(() => [1, 2, 3, 4].map((n) => t(`pricing.premiu
         :period="t('pricing.premium.period')"
         :text="t('pricing.premium.text')"
         :features="premiumFeatures"
-        :cta-label="t('pricing.premium.cta')"
+        :cta-label="premiumCta"
         cta-href="#download"
         highlighted
       />

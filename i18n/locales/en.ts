@@ -17,6 +17,7 @@ export default {
     pricing: 'Pricing',
     faq: 'FAQ',
     download: 'Get the app',
+    notify: 'Get notified',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
   },
@@ -24,12 +25,22 @@ export default {
     ios: 'Download for iPhone',
     android: 'Download for Android',
   },
+  notify: {
+    formLabel: 'Get notified of the release',
+    label: 'Be the first to know when the app is out',
+    placeholder: "you{'@'}email.com",
+    submit: 'Notify me',
+    help: 'Just one e-mail, on release day. Unsubscribe in one click.',
+    thanksTitle: 'Got it!',
+    thanksText: 'We’ll e-mail you as soon as Meepleo is available.',
+  },
   hero: {
     badge: 'The app for board game nights',
     titleLine1: 'Less rulebook,',
     titleLine2: 'more playing.',
     lead: 'Meepleo walks you through setup, answers your rules questions with Meepy and keeps the score sheet. Everyone stays around the table.',
     note: 'Free · iPhone and Android · Optional Premium',
+    soon: 'Coming soon to iPhone and Android · free',
     question: 'Do covered cards count?',
     answer: 'No, only visible cards count.',
     scoreAlt: 'Meepleo score sheet: the standings after 4 rounds',
@@ -138,6 +149,7 @@ export default {
   pricing: {
     eyebrow: 'Pricing',
     title: 'Free to play, Premium to go further',
+    notifyCta: 'Get notified of the release',
     free: {
       name: 'Free',
       price: '€0',
@@ -166,6 +178,10 @@ export default {
   faq: {
     eyebrow: 'Questions',
     title: 'Questions we get asked',
+    release: {
+      question: 'When will the app be available?',
+      answer: 'Soon, on iPhone and Android. Leave your e-mail above: we’ll let you know on release day.',
+    },
     friends: {
       question: 'Do my friends need the app?',
       answer:
@@ -190,6 +206,7 @@ export default {
   download: {
     title: 'Ready for the next game?',
     text: 'Download Meepleo, add your games, and let Meepy referee.',
+    soonText: 'Meepleo is coming soon to iPhone and Android. Leave your e-mail: we’ll let you know on release day.',
   },
   footer: {
     label: 'Legal links',

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const { storesEnabled } = useStoresEnabled()
 </script>
 
 <template>
@@ -21,8 +22,17 @@ const { t } = useI18n()
         <p class="text-ink-muted m-0 max-w-[520px] text-[17px] leading-[1.55] lg:text-xl">
           {{ t('hero.lead') }}
         </p>
-        <LandingStoreButtons />
-        <span class="text-ink-muted text-sm">{{ t('hero.note') }}</span>
+        <template v-if="storesEnabled">
+          <LandingStoreButtons />
+          <span class="text-ink-muted text-sm">{{ t('hero.note') }}</span>
+        </template>
+        <template v-else>
+          <span class="text-teal-ink flex items-center gap-2 self-start text-sm font-semibold">
+            <span aria-hidden="true" class="bg-teal size-2 rounded-full" />
+            {{ t('hero.soon') }}
+          </span>
+          <LandingNotifyForm />
+        </template>
       </div>
 
       <div
